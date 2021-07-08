@@ -1,0 +1,465 @@
+using FYP_PHR_API.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace FYP_PHR_API.Controllers
+{
+    public class UsersController : ApiController
+    {
+        PHREntities db = new PHREntities();
+
+
+
+        //  API for User to Login       ->  C
+        [HttpPost]
+        public HttpResponseMessage LoginUser(tb_Users user)
+        {
+            try
+            {
+                var loginusers = db.tb_Users.FirstOrDefault(e => e.u_cnic == user.u_cnic
+                                                                        &&
+                                                            e.u_name == user.u_name);
+                if (loginusers != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, loginusers);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "null");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        //  API for User to Register    ->  C
+        [HttpPost]
+        public HttpResponseMessage RegisterUser(tb_Users user)
+        {
+            try
+            {
+                var result = db.tb_Users.FirstOrDefault(e => e.u_cnic == user.u_cnic);
+                if (result != null)
+                    return Request.CreateResponse(HttpStatusCode.Found, "User Already Register");
+                else
+                {
+                    db.tb_Users.Add(user);
+                    db.SaveChanges();
+                    return Request.CreateResponse(HttpStatusCode.OK, user);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        //  API to Get All Diseases     ->  C
+        [HttpGet]
+        public HttpResponseMessage Diseases()
+        {
+            try
+            {
+                var diseases = db.tb_Disease.OrderBy(d => d.d_id).ToList();
+                if (diseases.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, diseases);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        //  API to Add User Diseases    ->  C
+        [HttpPost]
+        public HttpResponseMessage AddingUserDiseases(tb_User_Disease user_Disease)
+        {
+            try
+            {
+                //var result = db.tb_User_Disease.FirstOrDefault(ud => ud.u_email == user_Disease.u_email);
+                //if (result != null)
+                //    return Request.CreateResponse(HttpStatusCode.Found, "User Already Register");
+                //else
+                //{
+                db.tb_User_Disease.Add(user_Disease);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, user_Disease);
+                //}
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        //  API to Get All User Diseases    ->  C
+        [HttpGet]
+        public HttpResponseMessage GetUserDiseases(int id)
+        {
+            try
+            {
+                var user_Diseases = db.tb_User_Disease.Where(ud => ud.u_id == id).ToList();
+                if (user_Diseases.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, user_Diseases);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  API to Get All Allergies     ->  C
+        [HttpGet]
+        public HttpResponseMessage Allergies()
+        {
+            try
+            {
+                var diseases = db.tb_Allergy.OrderBy(d => d.a_id).ToList();
+                if (diseases.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, diseases);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        //  Get All Symptoms
+        [HttpGet]
+        public HttpResponseMessage Symptoms()
+        {
+            try
+            {
+                var symptoms = db.tb_Symptoms.OrderBy(d => d.s_id).ToList();
+                if (symptoms.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, symptoms);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Disease Symptoms
+        [HttpPost]
+        public HttpResponseMessage User_Disease_Symptoms(tb_User_Disease_Symptoms uds)
+        {
+            try
+            {
+                db.tb_User_Disease_Symptoms.Add(uds);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, uds);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Get User Disease Symptoms
+        [HttpGet]
+        public HttpResponseMessage User_Disease_Symptoms(int id)
+        {
+            try
+            {
+                var user_disease_symptoms = db.tb_User_Disease_Symptoms.Where(uds => uds.u_id == id).ToList();
+                if (user_disease_symptoms.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, user_disease_symptoms);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Family History
+        [HttpPost]
+        public HttpResponseMessage FamilyHistory(tb_Family_History fh)
+        {
+            try
+            {
+                db.tb_Family_History.Add(fh);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, fh);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+
+
+        //  Get User Family History
+        [HttpGet]
+        public HttpResponseMessage FamilyHistory(int id)
+        {
+            try
+            {
+                var ufh = db.tb_Family_History.Where(fh => fh.u_id == id).ToList();
+                if (ufh.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, ufh);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Social Hisory
+        [HttpPost]
+        public HttpResponseMessage SocialHistory(tb_Social_History sh)
+        {
+            try
+            {
+                db.tb_Social_History.Add(sh);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, sh);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        //  User Social History
+        [HttpGet]
+        public HttpResponseMessage SocialHistory(int id)
+        {
+            try
+            {
+                var ush = db.tb_Social_History.Where(sh => sh.u_id == id).ToList();
+                if (ush.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, ush);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Get all Medicines
+        [HttpGet]
+        public HttpResponseMessage Medicines()
+        {
+            try
+            {
+                var me = db.tb_Medicine.OrderBy(m => m.m_id).ToList();
+                if (me.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, me);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Medicines
+        [HttpPost]
+        public HttpResponseMessage UserMedicines(tb_User_Medicines um)
+        {
+            try
+            {
+                db.tb_User_Medicines.Add(um);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, um);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        //  Get User Medicines
+        [HttpGet]
+        public HttpResponseMessage User_Medicines(int id)
+        {
+            try
+            {
+                var um = db.tb_User_Medicines.Where(m => m.u_id == id).ToList();
+                if (um.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, um);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        } //  User Medicines
+
+
+        // Get User Allergies
+        [HttpGet]
+        public HttpResponseMessage User_Allergies(int id)
+        {
+            try
+            {
+                var ua = db.tb_User_Allergies.Where(a => a.u_id == id).ToList();
+                if (ua.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, ua);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        } //  User Medicines
+
+
+        //  Adding User Allergies
+        [HttpPost]
+        public HttpResponseMessage UserAllergies(tb_User_Allergies ua)
+        {
+            try
+            {
+                db.tb_User_Allergies.Add(ua);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, ua);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Get User Vaccination
+        [HttpGet]
+        public HttpResponseMessage User_Vaccination(int id)
+        {
+            try
+            {
+                var uv = db.tb_User_Vaccination.Where(v => v.u_id == id).ToList();
+                if (uv.Count() > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, uv);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Vacination
+        [HttpPost]
+        public HttpResponseMessage UserVaccination(tb_User_Vaccination uv)
+        {
+            try
+            {
+                db.tb_User_Vaccination.Add(uv);
+                db.SaveChanges();
+
+                var uva = db.tb_User_Vaccination.OrderBy(v => v.u_id == uv.u_id);
+                return Request.CreateResponse(HttpStatusCode.OK, uva.ToList());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        //  Adding User Vitals 
+        [HttpPost]
+        public HttpResponseMessage RegisterUser_Vitals(tb_User_Vitals user_vitals)
+        {
+            try
+            {
+                db.tb_User_Vitals.Add(user_vitals);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, user_vitals);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+        // Getting User Vitals
+        [HttpGet]
+        public HttpResponseMessage Vitals(int id)
+        {
+            try
+            {
+                var vital = db.tb_User_Vitals.Where(uv => uv.u_id == id).ToList();
+                if (vital.Count() != 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, vital);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+    }
+}

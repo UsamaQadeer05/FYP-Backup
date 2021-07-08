@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PHP_FYPModelStoreContainer" CdmEntityContainer="PHP_FYPEntities">
+    <EntitySetMapping Name="tb_Allergies">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Allergies">
+        <MappingFragment StoreEntitySet="tb_Allergies">
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Diseases">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Diseases">
+        <MappingFragment StoreEntitySet="tb_Diseases">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Medications">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Medications">
+        <MappingFragment StoreEntitySet="tb_Medications">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="m_company" ColumnName="m_company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Symptoms">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Symptoms">
+        <MappingFragment StoreEntitySet="tb_Symptoms">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Allergies">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Allergies">
+        <MappingFragment StoreEntitySet="tb_User_Allergies">
+          <ScalarProperty Name="ua_id" ColumnName="ua_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="ua_Level" ColumnName="ua_Level" />
+          <ScalarProperty Name="ua_StartDate" ColumnName="ua_StartDate" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Diseases">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Diseases">
+        <MappingFragment StoreEntitySet="tb_User_Diseases">
+          <ScalarProperty Name="ud_id" ColumnName="ud_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="ud_level" ColumnName="ud_level" />
+          <ScalarProperty Name="ud_Status" ColumnName="ud_Status" />
+          <ScalarProperty Name="ud_StartDate" ColumnName="ud_StartDate" />
+          <ScalarProperty Name="ud_EndDate" ColumnName="ud_EndDate" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Medications">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Medications">
+        <MappingFragment StoreEntitySet="tb_User_Medications">
+          <ScalarProperty Name="um_id" ColumnName="um_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="um_dosage" ColumnName="um_dosage" />
+          <ScalarProperty Name="um_StartDate" ColumnName="um_StartDate" />
+          <ScalarProperty Name="um_EndDate" ColumnName="um_EndDate" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Social_History">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Social_History">
+        <MappingFragment StoreEntitySet="tb_User_Social_History">
+          <ScalarProperty Name="sh_id" ColumnName="sh_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="s_level" ColumnName="s_level" />
+          <ScalarProperty Name="s_relation" ColumnName="s_relation" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Symptoms">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Symptoms">
+        <MappingFragment StoreEntitySet="tb_User_Symptoms">
+          <ScalarProperty Name="us_id" ColumnName="us_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="us_StartDate" ColumnName="us_StartDate" />
+          <ScalarProperty Name="us_EndDate" ColumnName="us_EndDate" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Vaccinations">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Vaccinations">
+        <MappingFragment StoreEntitySet="tb_User_Vaccinations">
+          <ScalarProperty Name="uv_id" ColumnName="uv_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="v_id" ColumnName="v_id" />
+          <ScalarProperty Name="uv_dosage" ColumnName="uv_dosage" />
+          <ScalarProperty Name="uv_injecteddate" ColumnName="uv_injecteddate" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User_Vitals">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Vitals">
+        <MappingFragment StoreEntitySet="tb_User_Vitals">
+          <ScalarProperty Name="uvi_id" ColumnName="uvi_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="uvi_temperature" ColumnName="uvi_temperature" />
+          <ScalarProperty Name="uvi_pulserate" ColumnName="uvi_pulserate" />
+          <ScalarProperty Name="uvi_respirationrate" ColumnName="uvi_respirationrate" />
+          <ScalarProperty Name="uvi_bloodpressure" ColumnName="uvi_bloodpressure" />
+          <ScalarProperty Name="uvi_weight" ColumnName="uvi_weight" />
+          <ScalarProperty Name="uvi_height" ColumnName="uvi_height" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Users">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Users">
+        <MappingFragment StoreEntitySet="tb_Users">
+          <ScalarProperty Name="u_cnic" ColumnName="u_cnic" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_gender" ColumnName="u_gender" />
+          <ScalarProperty Name="u_dob" ColumnName="u_dob" />
+          <ScalarProperty Name="u_country" ColumnName="u_country" />
+          <ScalarProperty Name="u_province" ColumnName="u_province" />
+          <ScalarProperty Name="u_city" ColumnName="u_city" />
+          <ScalarProperty Name="u_password" ColumnName="u_password" />
+          <ScalarProperty Name="u_waterfac" ColumnName="u_waterfac" />
+          <ScalarProperty Name="u_area" ColumnName="u_area" />
+          <ScalarProperty Name="u_home" ColumnName="u_home" />
+          <ScalarProperty Name="u_food" ColumnName="u_food" />
+          <ScalarProperty Name="u_ventilation" ColumnName="u_ventilation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Vaccination">
+      <EntityTypeMapping TypeName="PHP_FYPModel.tb_Vaccination">
+        <MappingFragment StoreEntitySet="tb_Vaccination">
+          <ScalarProperty Name="v_id" ColumnName="v_id" />
+          <ScalarProperty Name="v_name" ColumnName="v_name" />
+          <ScalarProperty Name="v_company" ColumnName="v_company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

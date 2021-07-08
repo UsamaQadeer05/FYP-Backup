@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PHP_FYPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_Allergies">
+    <Key>
+      <PropertyRef Name="a_id" />
+    </Key>
+    <Property Name="a_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Diseases">
+    <Key>
+      <PropertyRef Name="d_id" />
+    </Key>
+    <Property Name="d_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="d_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Medications">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="m_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="m_company" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Symptoms">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_User_Allergies">
+    <Key>
+      <PropertyRef Name="ua_id" />
+    </Key>
+    <Property Name="ua_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="a_id" Type="int" Nullable="false" />
+    <Property Name="ua_Level" Type="int" />
+    <Property Name="ua_StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Diseases">
+    <Key>
+      <PropertyRef Name="ud_id" />
+    </Key>
+    <Property Name="ud_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="d_id" Type="int" />
+    <Property Name="ud_level" Type="nvarchar" MaxLength="100" />
+    <Property Name="ud_Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="ud_StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="ud_EndDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Medications">
+    <Key>
+      <PropertyRef Name="um_id" />
+    </Key>
+    <Property Name="um_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="m_id" Type="int" />
+    <Property Name="um_dosage" Type="int" />
+    <Property Name="um_StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="um_EndDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Social_History">
+    <Key>
+      <PropertyRef Name="sh_id" />
+    </Key>
+    <Property Name="sh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="d_id" Type="int" />
+    <Property Name="s_level" Type="nvarchar" MaxLength="100" />
+    <Property Name="s_relation" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Symptoms">
+    <Key>
+      <PropertyRef Name="us_id" />
+    </Key>
+    <Property Name="us_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="s_id" Type="int" />
+    <Property Name="us_StartDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="us_EndDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Vaccinations">
+    <Key>
+      <PropertyRef Name="uv_id" />
+    </Key>
+    <Property Name="uv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="v_id" Type="int" />
+    <Property Name="uv_dosage" Type="nvarchar" MaxLength="100" />
+    <Property Name="uv_injecteddate" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_User_Vitals">
+    <Key>
+      <PropertyRef Name="uvi_id" />
+    </Key>
+    <Property Name="uvi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="uvi_temperature" Type="nvarchar" MaxLength="100" />
+    <Property Name="uvi_pulserate" Type="nvarchar" MaxLength="100" />
+    <Property Name="uvi_respirationrate" Type="nvarchar" MaxLength="100" />
+    <Property Name="uvi_bloodpressure" Type="nvarchar" MaxLength="100" />
+    <Property Name="uvi_weight" Type="nvarchar" MaxLength="100" />
+    <Property Name="uvi_height" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_Users">
+    <Key>
+      <PropertyRef Name="u_id" />
+    </Key>
+    <Property Name="u_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_name" Type="nvarchar(max)" />
+    <Property Name="u_cnic" Type="nvarchar(max)" />
+    <Property Name="u_gender" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_dob" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_country" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_province" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_city" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_password" Type="nvarchar(max)" />
+    <Property Name="u_waterfac" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_area" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_home" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_food" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_ventilation" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tb_Vaccination">
+    <Key>
+      <PropertyRef Name="v_id" />
+    </Key>
+    <Property Name="v_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="v_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="v_company" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tb_User_Allergies_tb_Allergies">
+    <End Role="tb_Allergies" Type="Self.tb_Allergies" Multiplicity="1" />
+    <End Role="tb_User_Allergies" Type="Self.tb_User_Allergies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Allergies">
+        <PropertyRef Name="a_id" />
+      </Principal>
+      <Dependent Role="tb_User_Allergies">
+        <PropertyRef Name="a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Allergies_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_User_Allergies" Type="Self.tb_User_Allergies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Allergies">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Diseases_tb_Diseases">
+    <End Role="tb_Diseases" Type="Self.tb_Diseases" Multiplicity="0..1" />
+    <End Role="tb_User_Diseases" Type="Self.tb_User_Diseases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Diseases">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Diseases_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Diseases" Type="Self.tb_User_Diseases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Diseases">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Medications_tb_Medications">
+    <End Role="tb_Medications" Type="Self.tb_Medications" Multiplicity="0..1" />
+    <End Role="tb_User_Medications" Type="Self.tb_User_Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Medications">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="tb_User_Medications">
+        <PropertyRef Name="m_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Medications_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Medications" Type="Self.tb_User_Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Medications">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Social_History_tb_Diseases">
+    <End Role="tb_Diseases" Type="Self.tb_Diseases" Multiplicity="0..1" />
+    <End Role="tb_User_Social_History" Type="Self.tb_User_Social_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Social_History">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Social_History_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Social_History" Type="Self.tb_User_Social_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Social_History">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Symptoms_tb_Symptoms">
+    <End Role="tb_Symptoms" Type="Self.tb_Symptoms" Multiplicity="0..1" />
+    <End Role="tb_User_Symptoms" Type="Self.tb_User_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Symptoms">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="tb_User_Symptoms">
+        <PropertyRef Name="s_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Symptoms_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Symptoms" Type="Self.tb_User_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Symptoms">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Vaccinations_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Vaccinations" Type="Self.tb_User_Vaccinations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Vaccinations">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Vaccinations_tb_Vaccination">
+    <End Role="tb_Vaccination" Type="Self.tb_Vaccination" Multiplicity="0..1" />
+    <End Role="tb_User_Vaccinations" Type="Self.tb_User_Vaccinations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Vaccination">
+        <PropertyRef Name="v_id" />
+      </Principal>
+      <Dependent Role="tb_User_Vaccinations">
+        <PropertyRef Name="v_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Vitals_tb_Users">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="0..1" />
+    <End Role="tb_User_Vitals" Type="Self.tb_User_Vitals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="u_id" />
+      </Principal>
+      <Dependent Role="tb_User_Vitals">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PHP_FYPModelStoreContainer">
+    <EntitySet Name="tb_Allergies" EntityType="Self.tb_Allergies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Diseases" EntityType="Self.tb_Diseases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Medications" EntityType="Self.tb_Medications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Symptoms" EntityType="Self.tb_Symptoms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Allergies" EntityType="Self.tb_User_Allergies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Diseases" EntityType="Self.tb_User_Diseases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Medications" EntityType="Self.tb_User_Medications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Social_History" EntityType="Self.tb_User_Social_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Symptoms" EntityType="Self.tb_User_Symptoms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Vaccinations" EntityType="Self.tb_User_Vaccinations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User_Vitals" EntityType="Self.tb_User_Vitals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Users" EntityType="Self.tb_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Vaccination" EntityType="Self.tb_Vaccination" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tb_User_Allergies_tb_Allergies" Association="Self.FK_tb_User_Allergies_tb_Allergies">
+      <End Role="tb_Allergies" EntitySet="tb_Allergies" />
+      <End Role="tb_User_Allergies" EntitySet="tb_User_Allergies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Allergies_tb_Users" Association="Self.FK_tb_User_Allergies_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Allergies" EntitySet="tb_User_Allergies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Diseases_tb_Diseases" Association="Self.FK_tb_User_Diseases_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Diseases" EntitySet="tb_User_Diseases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Diseases_tb_Users" Association="Self.FK_tb_User_Diseases_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Diseases" EntitySet="tb_User_Diseases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Medications_tb_Medications" Association="Self.FK_tb_User_Medications_tb_Medications">
+      <End Role="tb_Medications" EntitySet="tb_Medications" />
+      <End Role="tb_User_Medications" EntitySet="tb_User_Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Medications_tb_Users" Association="Self.FK_tb_User_Medications_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Medications" EntitySet="tb_User_Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Social_History_tb_Diseases" Association="Self.FK_tb_User_Social_History_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Social_History" EntitySet="tb_User_Social_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Social_History_tb_Users" Association="Self.FK_tb_User_Social_History_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Social_History" EntitySet="tb_User_Social_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Symptoms_tb_Symptoms" Association="Self.FK_tb_User_Symptoms_tb_Symptoms">
+      <End Role="tb_Symptoms" EntitySet="tb_Symptoms" />
+      <End Role="tb_User_Symptoms" EntitySet="tb_User_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Symptoms_tb_Users" Association="Self.FK_tb_User_Symptoms_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Symptoms" EntitySet="tb_User_Symptoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Vaccinations_tb_Users" Association="Self.FK_tb_User_Vaccinations_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Vaccinations" EntitySet="tb_User_Vaccinations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Vaccinations_tb_Vaccination" Association="Self.FK_tb_User_Vaccinations_tb_Vaccination">
+      <End Role="tb_Vaccination" EntitySet="tb_Vaccination" />
+      <End Role="tb_User_Vaccinations" EntitySet="tb_User_Vaccinations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Vitals_tb_Users" Association="Self.FK_tb_User_Vitals_tb_Users">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_User_Vitals" EntitySet="tb_User_Vitals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
