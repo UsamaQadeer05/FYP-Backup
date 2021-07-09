@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.usama.fyp_phr_android.User.SignInActivity;
+import com.usama.fyp_phr_android.User.SignUpActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreen.this,
-                        SignInActivity.class);
+                        SignUpActivity.class);
                 //Intent is used to switch from one activity to another.
 
                 startActivity(i);
