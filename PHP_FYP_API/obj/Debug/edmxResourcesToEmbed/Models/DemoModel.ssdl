@@ -36,7 +36,7 @@
     <Property Name="ua_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="u_id" Type="int" Nullable="false" />
     <Property Name="a_id" Type="int" Nullable="false" />
-    <Property Name="ua_Level" Type="int" />
+    <Property Name="ua_Level" Type="nvarchar" MaxLength="100" />
     <Property Name="ua_StartDate" Type="nvarchar" MaxLength="100" />
     <Property Name="lastUpdated" Type="nvarchar" MaxLength="100" />
   </EntityType>

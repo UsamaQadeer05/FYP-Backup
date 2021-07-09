@@ -8,18 +8,18 @@ using System.Web.Http;
 
 namespace PHP_FYP_API.Controllers
 {
-    public class DiseasesController : ApiController
+    public class AllergiesController : ApiController
     {
         PHP_FYPEntities db = new PHP_FYPEntities();
 
 
-        //  API to Get All Diseases     ->  C
+        //  API to Get All Allergies     ->  C
         [HttpGet]
-        public HttpResponseMessage Diseases()
+        public HttpResponseMessage Allergies()
         {
             try
             {
-                var diseases = db.tb_Diseases.OrderBy(d => d.d_id).ToList();
+                var diseases = db.tb_Allergies.OrderBy(d => d.a_id).ToList();
                 if (diseases.Count() > 0)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, diseases);
@@ -34,21 +34,15 @@ namespace PHP_FYP_API.Controllers
         }
 
 
-        //  API to Add User Diseases    ->  C
+        //  API to Add User Allergies    ->  C
         [HttpPost]
-        public HttpResponseMessage AddingUserDiseases(tb_User_Diseases user_Disease)
+        public HttpResponseMessage AddingUserAllergies(tb_User_Allergies ua)
         {
             try
             {
-                //var result = db.tb_User_Disease.FirstOrDefault(ud => ud.u_email == user_Disease.u_email);
-                //if (result != null)
-                //    return Request.CreateResponse(HttpStatusCode.Found, "User Already Register");
-                //else
-                //{
-                db.tb_User_Diseases.Add(user_Disease);
+                db.tb_User_Allergies.Add(ua);
                 db.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, user_Disease);
-                //}
+                return Request.CreateResponse(HttpStatusCode.OK, ua);
             }
             catch (Exception ex)
             {
@@ -57,16 +51,16 @@ namespace PHP_FYP_API.Controllers
         }
 
 
-        //  API to Get All User Diseases    ->  C
+        //  API to Get All User Allergies    ->  C
         [HttpGet]
-        public HttpResponseMessage GetUserDiseases(int id)
+        public HttpResponseMessage GetUserAllergies(int id)
         {
             try
             {
-                var user_Diseases = db.tb_User_Diseases.Where(ud => ud.u_id == id).ToList();
-                if (user_Diseases.Count() > 0)
+                var ua = db.tb_User_Allergies.Where(a => a.u_id == id).ToList();
+                if (ua.Count() > 0)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, user_Diseases);
+                    return Request.CreateResponse(HttpStatusCode.OK, ua);
                 }
                 else
                     return Request.CreateResponse(HttpStatusCode.NotFound, "No Record");
@@ -76,6 +70,7 @@ namespace PHP_FYP_API.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
 
     }
 }

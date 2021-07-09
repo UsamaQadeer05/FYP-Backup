@@ -36,7 +36,7 @@
     <Property Name="ua_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="u_id" Type="Int32" Nullable="false" />
     <Property Name="a_id" Type="Int32" Nullable="false" />
-    <Property Name="ua_Level" Type="Int32" />
+    <Property Name="ua_Level" Type="String" />
     <Property Name="ua_StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="lastUpdated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>

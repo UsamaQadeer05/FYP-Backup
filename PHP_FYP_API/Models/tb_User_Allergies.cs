@@ -17,7 +17,7 @@ namespace PHP_FYP_API.Models
         public int ua_id { get; set; }
         public int u_id { get; set; }
         public int a_id { get; set; }
-        public Nullable<int> ua_Level { get; set; }
+        public string ua_Level { get; set; }
         public string ua_StartDate { get; set; }
         public string lastUpdated { get; set; }
     }
