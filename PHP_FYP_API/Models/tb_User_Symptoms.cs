@@ -20,5 +20,6 @@ namespace PHP_FYP_API.Models
         public string us_StartDate { get; set; }
         public string us_EndDate { get; set; }
         public string lastUpdated { get; set; }
+        public Nullable<int> d_id { get; set; }
     }
 }

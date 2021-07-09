@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="PHP_FYPModel.tb_Symptoms" Width="1.5" PointX="3.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Allergies" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Diseases" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Medications" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Medications" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Social_History" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Symptoms" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PHP_FYPModel.tb_User_Vaccinations" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
@@ -31,6 +31,8 @@
         <AssociationConnector Association="PHP_FYPModel.FK_tb_User_Vaccinations_tb_Users" ManuallyRouted="false" />
         <AssociationConnector Association="PHP_FYPModel.FK_tb_User_Vaccinations_tb_Vaccination" ManuallyRouted="false" />
         <AssociationConnector Association="PHP_FYPModel.FK_tb_User_Vitals_tb_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PHP_FYPModel.FK_tb_User_Medications_tb_Diseases" />
+        <AssociationConnector Association="PHP_FYPModel.FK_tb_User_Symptoms_tb_Diseases" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

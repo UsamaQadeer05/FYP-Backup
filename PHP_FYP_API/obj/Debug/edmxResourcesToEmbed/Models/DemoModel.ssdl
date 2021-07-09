@@ -59,6 +59,7 @@
     </Key>
     <Property Name="um_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="u_id" Type="int" />
+    <Property Name="d_id" Type="int" />
     <Property Name="m_id" Type="int" />
     <Property Name="um_dosage" Type="int" />
     <Property Name="um_StartDate" Type="nvarchar" MaxLength="100" />
@@ -82,6 +83,7 @@
     </Key>
     <Property Name="us_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="u_id" Type="int" />
+    <Property Name="d_id" Type="int" />
     <Property Name="s_id" Type="int" />
     <Property Name="us_StartDate" Type="nvarchar" MaxLength="100" />
     <Property Name="us_EndDate" Type="nvarchar" MaxLength="100" />
@@ -187,6 +189,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tb_User_Medications_tb_Diseases">
+    <End Role="tb_Diseases" Type="Self.tb_Diseases" Multiplicity="0..1" />
+    <End Role="tb_User_Medications" Type="Self.tb_User_Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Medications">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tb_User_Medications_tb_Medications">
     <End Role="tb_Medications" Type="Self.tb_Medications" Multiplicity="0..1" />
     <End Role="tb_User_Medications" Type="Self.tb_User_Medications" Multiplicity="*" />
@@ -232,6 +246,18 @@
       </Principal>
       <Dependent Role="tb_User_Social_History">
         <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Symptoms_tb_Diseases">
+    <End Role="tb_Diseases" Type="Self.tb_Diseases" Multiplicity="0..1" />
+    <End Role="tb_User_Symptoms" Type="Self.tb_User_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Symptoms">
+        <PropertyRef Name="d_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -325,6 +351,10 @@
       <End Role="tb_Users" EntitySet="tb_Users" />
       <End Role="tb_User_Diseases" EntitySet="tb_User_Diseases" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Medications_tb_Diseases" Association="Self.FK_tb_User_Medications_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Medications" EntitySet="tb_User_Medications" />
+    </AssociationSet>
     <AssociationSet Name="FK_tb_User_Medications_tb_Medications" Association="Self.FK_tb_User_Medications_tb_Medications">
       <End Role="tb_Medications" EntitySet="tb_Medications" />
       <End Role="tb_User_Medications" EntitySet="tb_User_Medications" />
@@ -340,6 +370,10 @@
     <AssociationSet Name="FK_tb_User_Social_History_tb_Users" Association="Self.FK_tb_User_Social_History_tb_Users">
       <End Role="tb_Users" EntitySet="tb_Users" />
       <End Role="tb_User_Social_History" EntitySet="tb_User_Social_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Symptoms_tb_Diseases" Association="Self.FK_tb_User_Symptoms_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Symptoms" EntitySet="tb_User_Symptoms" />
     </AssociationSet>
     <AssociationSet Name="FK_tb_User_Symptoms_tb_Symptoms" Association="Self.FK_tb_User_Symptoms_tb_Symptoms">
       <End Role="tb_Symptoms" EntitySet="tb_Symptoms" />

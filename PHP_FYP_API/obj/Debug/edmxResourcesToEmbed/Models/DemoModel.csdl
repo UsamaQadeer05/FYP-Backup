@@ -36,7 +36,7 @@
     <Property Name="ua_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="u_id" Type="Int32" Nullable="false" />
     <Property Name="a_id" Type="Int32" Nullable="false" />
-    <Property Name="ua_Level" Type="String" />
+    <Property Name="ua_Level" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="ua_StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="lastUpdated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
@@ -64,6 +64,7 @@
     <Property Name="um_StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="um_EndDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="lastUpdated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="d_id" Type="Int32" />
   </EntityType>
   <EntityType Name="tb_User_Social_History">
     <Key>
@@ -86,6 +87,7 @@
     <Property Name="us_StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="us_EndDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="lastUpdated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="d_id" Type="Int32" />
   </EntityType>
   <EntityType Name="tb_User_Vaccinations">
     <Key>
@@ -361,5 +363,37 @@
       <End Role="tb_Users" EntitySet="tb_Users" />
       <End Role="tb_User_Vitals" EntitySet="tb_User_Vitals" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Medications_tb_Diseases" Association="PHP_FYPModel.FK_tb_User_Medications_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Medications" EntitySet="tb_User_Medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_User_Symptoms_tb_Diseases" Association="PHP_FYPModel.FK_tb_User_Symptoms_tb_Diseases">
+      <End Role="tb_Diseases" EntitySet="tb_Diseases" />
+      <End Role="tb_User_Symptoms" EntitySet="tb_User_Symptoms" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_tb_User_Medications_tb_Diseases">
+    <End Type="PHP_FYPModel.tb_Diseases" Role="tb_Diseases" Multiplicity="0..1" />
+    <End Type="PHP_FYPModel.tb_User_Medications" Role="tb_User_Medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Medications">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_User_Symptoms_tb_Diseases">
+    <End Type="PHP_FYPModel.tb_Diseases" Role="tb_Diseases" Multiplicity="0..1" />
+    <End Type="PHP_FYPModel.tb_User_Symptoms" Role="tb_User_Symptoms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Diseases">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="tb_User_Symptoms">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

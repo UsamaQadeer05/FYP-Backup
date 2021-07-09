@@ -63,6 +63,7 @@
     <EntitySetMapping Name="tb_User_Medications">
       <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Medications">
         <MappingFragment StoreEntitySet="tb_User_Medications">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
           <ScalarProperty Name="um_id" ColumnName="um_id" />
           <ScalarProperty Name="u_id" ColumnName="u_id" />
           <ScalarProperty Name="m_id" ColumnName="m_id" />
@@ -88,6 +89,7 @@
     <EntitySetMapping Name="tb_User_Symptoms">
       <EntityTypeMapping TypeName="PHP_FYPModel.tb_User_Symptoms">
         <MappingFragment StoreEntitySet="tb_User_Symptoms">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
           <ScalarProperty Name="us_id" ColumnName="us_id" />
           <ScalarProperty Name="u_id" ColumnName="u_id" />
           <ScalarProperty Name="s_id" ColumnName="s_id" />
