@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="Add Disease"
+            android:text="Add Medication"
             android:textColor="#ffffff"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -96,9 +96,9 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--  FOR LEVEL DROP DOWN -->
+                <!--  FOR MEDICINES DROP DOWN -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputLevel"
+                    android:id="@+id/inputMedicine"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,19 +114,19 @@
                     app:layout_constraintTop_toBottomOf="@id/inputFood">
 
                     <AutoCompleteTextView
-                        android:id="@+id/act_Level"
+                        android:id="@+id/act_Medicine"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="Level"
+                        android:hint="Medicine"
                         android:inputType="none"
                         android:textSize="18sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--  FOR STATUS DROP DOWN -->
+                <!--  FOR DOSAGE DROP DOWN -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputStatus"
+                    android:id="@+id/inputDosage"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,11 +139,11 @@
                     app:hintTextColor="@color/colorPrimary">
 
                     <AutoCompleteTextView
-                        android:id="@+id/act_Status"
+                        android:id="@+id/act_Dosage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="Status"
+                        android:hint="Dosage"
                         android:inputType="none"
                         android:textSize="18sp" />
                 </com.google.android.material.textfield.TextInputLayout>

@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Allergy.AllergyActivity"></activity>
+        <activity android:name=".Vaccination.VaccinationActivity"></activity>
+        <activity android:name=".VitalSign.VitalSignsActivity" />
+        <activity android:name=".Symptom.SymptomActivity" />
+        <activity android:name=".SocialHistory.SocialHistoryActivity" />
+        <activity android:name=".Medication.MedicationActivity" />
+        <activity android:name=".Allergy.AllergyActivity" />
         <activity android:name=".Disease.DiseaseActivity" />
         <activity android:name=".User.SignUpActivity" />
         <activity android:name=".User.SignInActivity" />

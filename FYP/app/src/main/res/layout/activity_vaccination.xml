@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="Add Disease"
+            android:text="Add Vaccination"
             android:textColor="#ffffff"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -68,9 +68,9 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-                <!--  FOR DISEASES DROP DOWN -->
+                <!--  FOR VACCINATION DROP DOWN -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputDiseases"
+                    android:id="@+id/inputVaccination"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,72 +86,45 @@
                     app:layout_constraintTop_toBottomOf="@id/inputFood">
 
                     <AutoCompleteTextView
-                        android:id="@+id/act_Diseases"
+                        android:id="@+id/act_Vaccination"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="Disease"
+                        android:hint="Vaccination"
                         android:inputType="none"
                         android:textSize="18sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--  FOR LEVEL DROP DOWN -->
+                <!--  FOR DOSAGE EDIT TEXT -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputLevel"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:id="@+id/inputDosage"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    app:endIconMode="dropdown_menu"
+                    android:hint="Dosage"
+                    app:endIconMode="clear_text"
                     app:helperText="Required*"
                     app:helperTextTextColor="#ED1919"
                     app:hintTextColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/inputFood">
+                    app:layout_constraintTop_toBottomOf="@id/view2">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/act_Level"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDosage"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:hint="Level"
-                        android:inputType="none"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--  FOR STATUS DROP DOWN -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputStatus"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    app:endIconMode="dropdown_menu"
-                    app:helperText="Required*"
-                    app:helperTextTextColor="#ED1919"
-                    app:hintTextColor="@color/colorPrimary">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/act_Status"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:hint="Status"
-                        android:inputType="none"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <!-- FOR START DATE EDIT TEXT -->
+                <!-- FOR INJECTED DATE EDIT TEXT -->
                 <EditText
-                    android:id="@+id/etStartDate"
+                    android:id="@+id/etInjectedDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -159,23 +132,7 @@
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/round_borders"
                     android:editable="false"
-                    android:hint="Select Start Date"
-                    android:inputType="none"
-                    android:padding="16dp"
-                    android:textSize="18sp" />
-
-
-                <!-- FOR END DATE EDIT TEXT -->
-                <EditText
-                    android:id="@+id/etEndDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/round_borders"
-                    android:editable="false"
-                    android:hint="Select End Date"
+                    android:hint="Select Injected Date"
                     android:inputType="none"
                     android:padding="16dp"
                     android:textSize="18sp" />

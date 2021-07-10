@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#f2f2f2"
     android:orientation="vertical"
-    tools:context=".Disease.DiseaseActivity">
+    tools:context=".SocialHistory.SocialHistoryActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="Add Disease"
+            android:text="Add Social History"
             android:textColor="#ffffff"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -124,9 +124,9 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--  FOR STATUS DROP DOWN -->
+                <!--  FOR RELATION DROP DOWN -->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/inputStatus"
+                    android:id="@+id/inputRelation"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,46 +139,14 @@
                     app:hintTextColor="@color/colorPrimary">
 
                     <AutoCompleteTextView
-                        android:id="@+id/act_Status"
+                        android:id="@+id/act_Relation"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:hint="Status"
+                        android:hint="Relation"
                         android:inputType="none"
                         android:textSize="18sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <!-- FOR START DATE EDIT TEXT -->
-                <EditText
-                    android:id="@+id/etStartDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/round_borders"
-                    android:editable="false"
-                    android:hint="Select Start Date"
-                    android:inputType="none"
-                    android:padding="16dp"
-                    android:textSize="18sp" />
-
-
-                <!-- FOR END DATE EDIT TEXT -->
-                <EditText
-                    android:id="@+id/etEndDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/round_borders"
-                    android:editable="false"
-                    android:hint="Select End Date"
-                    android:inputType="none"
-                    android:padding="16dp"
-                    android:textSize="18sp" />
 
 
                 <!-- FOR LAST UPDATED EDIT TEXT -->
