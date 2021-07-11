@@ -21,7 +21,7 @@ namespace PHP_FYP_API.Controllers
             {
                 var loginusers = db.tb_Users.FirstOrDefault(e => e.u_cnic == user.u_cnic
                                                                         &&
-                                                            e.u_name == user.u_name);
+                                                            e.u_password == user.u_password);
                 if (loginusers != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, loginusers);

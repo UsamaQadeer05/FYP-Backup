@@ -8,8 +8,13 @@ import android.os.Handler;
 
 import com.usama.fyp_phr_android.Allergy.AllergyActivity;
 import com.usama.fyp_phr_android.Disease.DiseaseActivity;
+import com.usama.fyp_phr_android.Medication.MedicationActivity;
+import com.usama.fyp_phr_android.SocialHistory.SocialHistoryActivity;
+import com.usama.fyp_phr_android.Symptom.SymptomActivity;
 import com.usama.fyp_phr_android.User.SignInActivity;
 import com.usama.fyp_phr_android.User.SignUpActivity;
+import com.usama.fyp_phr_android.Vaccination.VaccinationActivity;
+import com.usama.fyp_phr_android.VitalSign.VitalSignsActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -24,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreen.this,
-                        AllergyActivity.class);
+                        SignInActivity.class);
                 //Intent is used to switch from one activity to another.
 
                 startActivity(i);
