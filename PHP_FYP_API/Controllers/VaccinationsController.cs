@@ -44,7 +44,7 @@ namespace PHP_FYP_API.Controllers
                 db.SaveChanges();
 
                 var uva = db.tb_User_Vaccinations.OrderBy(v => v.u_id == uv.u_id);
-                return Request.CreateResponse(HttpStatusCode.OK, uva.ToList());
+                return Request.CreateResponse(HttpStatusCode.OK, uv);
             }
             catch (Exception ex)
             {

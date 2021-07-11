@@ -23,6 +23,7 @@ import com.usama.fyp_phr_android.Disease.DiseaseActivity;
 import com.usama.fyp_phr_android.Disease.Model.Disease;
 import com.usama.fyp_phr_android.R;
 import com.usama.fyp_phr_android.User.Model.User;
+import com.usama.fyp_phr_android.Vaccination.VaccinationActivity;
 import com.usama.fyp_phr_android.VitalSign.VitalSignsActivity;
 
 import org.json.JSONArray;
@@ -167,7 +168,7 @@ public class SignInActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, VitalSignsActivity.class));
+                            startActivity(new Intent(SignInActivity.this, VaccinationActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);
