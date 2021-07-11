@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.usama.fyp_phr_android.AES.AES;
+import com.usama.fyp_phr_android.Disease.DiseaseActivity;
+import com.usama.fyp_phr_android.Disease.Model.Disease;
 import com.usama.fyp_phr_android.R;
 import com.usama.fyp_phr_android.User.Model.User;
 
@@ -36,6 +39,7 @@ public class SignInActivity extends AppCompatActivity {
     String CNIC, PIN, enCNIC, enPIN;
     AES aes = new AES();
     SharedPreferences sh;
+    ProgressBar pg;
     int id;
 
     @Override
@@ -61,6 +65,7 @@ public class SignInActivity extends AppCompatActivity {
         tvforgotPassword = findViewById(R.id.tvforgotPassword);
         tvRegister = findViewById(R.id.tvRegister);
         btnLogin = findViewById(R.id.btnLogin);
+        pg = findViewById(R.id.login_progress);
     }
 
 
@@ -142,6 +147,8 @@ public class SignInActivity extends AppCompatActivity {
 
     // API Call to Validate Login User through AFNL
     private void LoginUser() {
+        pg.setVisibility(View.VISIBLE);
+
         User user = new User();
         user.setU_password(enPIN);
         user.setU_cnic(enCNIC);
@@ -158,9 +165,11 @@ public class SignInActivity extends AppCompatActivity {
                         try {
                             id = response.getInt("u_id");
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+                            pg.setVisibility(View.INVISIBLE);
+                            startActivity(new Intent(SignInActivity.this, DiseaseActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            pg.setVisibility(View.INVISIBLE);
                         }
                     }
 

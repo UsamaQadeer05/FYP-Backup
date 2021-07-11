@@ -14,12 +14,20 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.usama.fyp_phr_android.AES.AES;
 import com.usama.fyp_phr_android.R;
 import com.usama.fyp_phr_android.User.Model.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.time.Year;
@@ -33,6 +41,8 @@ public class SignUpActivity extends AppCompatActivity {
     String enCNIC, enPIN, enName;
     AES aes = new AES();
     User user;
+    ProgressBar pg;
+    int id;
     TextInputLayout inputName,
             inputCNIC,
             inputPIN,
@@ -99,7 +109,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Gender.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,7 +119,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Country.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,7 +129,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Province.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -132,7 +139,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_City.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -143,7 +149,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Water.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -154,7 +159,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Area.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -165,7 +169,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -176,7 +179,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -187,7 +189,6 @@ public class SignUpActivity extends AppCompatActivity {
         act_Ventilation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SignUpActivity.this, "Item Click " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -219,6 +220,38 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
     }
+
+
+    //  Intializing Objects
+    private void initView() {
+        inputName = findViewById(R.id.inputName);
+        inputCNIC = findViewById(R.id.inputCNIC);
+        inputPIN = findViewById(R.id.inputPIN);
+
+        inputGender = findViewById(R.id.inputGender);
+        act_Gender = findViewById(R.id.act_Gender);
+        inputCountry = findViewById(R.id.inputCountry);
+        act_Country = findViewById(R.id.act_Country);
+        inputProvince = findViewById(R.id.inputProvince);
+        act_Province = findViewById(R.id.act_Province);
+        inputCity = findViewById(R.id.inputCity);
+        act_City = findViewById(R.id.act_City);
+        inputWater = findViewById(R.id.inputWater);
+        act_Water = findViewById(R.id.act_Water);
+        inputArea = findViewById(R.id.inputArea);
+        act_Area = findViewById(R.id.act_Area);
+        inputHome = findViewById(R.id.inputHome);
+        act_Home = findViewById(R.id.act_Home);
+        inputFood = findViewById(R.id.inputFood);
+        act_Food = findViewById(R.id.act_Food);
+        inputVentilation = findViewById(R.id.inputVentilation);
+        act_Ventilation = findViewById(R.id.act_Ventilation);
+
+        pg = findViewById(R.id.login_progress);
+        btnRegister = findViewById(R.id.btnRegister);
+        etDOB = findViewById(R.id.etDOB);
+    }
+
 
     //  Setting Gender Dropdown
     private void setGenderDropdown() {
@@ -351,36 +384,6 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    //  Intializing Objects
-    private void initView() {
-        inputName = findViewById(R.id.inputName);
-        inputCNIC = findViewById(R.id.inputCNIC);
-        inputPIN = findViewById(R.id.inputPIN);
-
-        inputGender = findViewById(R.id.inputGender);
-        act_Gender = findViewById(R.id.act_Gender);
-        inputCountry = findViewById(R.id.inputCountry);
-        act_Country = findViewById(R.id.act_Country);
-        inputProvince = findViewById(R.id.inputProvince);
-        act_Province = findViewById(R.id.act_Province);
-        inputCity = findViewById(R.id.inputCity);
-        act_City = findViewById(R.id.act_City);
-        inputWater = findViewById(R.id.inputWater);
-        act_Water = findViewById(R.id.act_Water);
-        inputArea = findViewById(R.id.inputArea);
-        act_Area = findViewById(R.id.act_Area);
-        inputHome = findViewById(R.id.inputHome);
-        act_Home = findViewById(R.id.act_Home);
-        inputFood = findViewById(R.id.inputFood);
-        act_Food = findViewById(R.id.act_Food);
-        inputVentilation = findViewById(R.id.inputVentilation);
-        act_Ventilation = findViewById(R.id.act_Ventilation);
-
-        btnRegister = findViewById(R.id.btnRegister);
-        etDOB = findViewById(R.id.etDOB);
-    }
-
-
     //  Onclick Listeners
     public void onClick(View view) {
         switch (view.getId()) {
@@ -486,25 +489,50 @@ public class SignUpActivity extends AppCompatActivity {
 
     //  API Call to Register User through AFNL
     private void RegisterUser() {
-        getSharedPreferences();
-    }
+//        getSharedPreferences();
+        pg.setVisibility(View.VISIBLE);
 
-    //  Getting User Id in Shared Preferences
-    private void getSharedPreferences() {
-        // Retrieving the value using its keys the file name
-        // must be same in both saving and retrieving the data
-        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        User user = new User();
+        user.setU_name(enName);
+        user.setU_cnic(enCNIC);
+        user.setU_gender(inputGender.getEditText().getText().toString());
+        user.setU_dob(etDOB.getText().toString());
+        user.setU_country(inputCountry.getEditText().getText().toString());
+        user.setU_province(inputProvince.getEditText().getText().toString());
+        user.setU_city(inputCity.getEditText().getText().toString());
+        user.setU_password(enPIN);
+        user.setU_waterfac(inputWater.getEditText().getText().toString());
+        user.setU_area(inputArea.getEditText().getText().toString());
+        user.setU_food(inputFood.getEditText().getText().toString());
+        user.setU_ventilation(inputVentilation.getEditText().getText().toString());
 
-        // The value will be default as empty string because for
-        // the very first time when the app is opened, there is nothing to show
-        int a = sh.getInt("User Id", 0);
 
-        Toast.makeText(this, "Id: " + a, Toast.LENGTH_SHORT).show();
+        AndroidNetworking.post("http://10.0.2.2/PHP_FYP_API/api/Users/RegisterUser")
+                .addBodyParameter(user) // posting java object
+                .setTag("test")
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // do anything with response
+                        try {
+                            id = response.getInt("u_id");
+                            Toast.makeText(SignUpActivity.this, "Registered Successfully: " + response.toString(), Toast.LENGTH_SHORT).show();
+                            pg.setVisibility(View.INVISIBLE);
+                            startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            pg.setVisibility(View.INVISIBLE);
+                        }
+                    }
 
-        // We can then use the data
-//        name.setText(s1);
-//        age.setText(String.valueOf(a));
-
+                    @Override
+                    public void onError(ANError error) {
+                        // handle error
+                        Toast.makeText(SignUpActivity.this, "Some went wrong: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
 }
