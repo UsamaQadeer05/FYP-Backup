@@ -246,7 +246,6 @@ public class DiseaseActivity extends AppCompatActivity {
                 RegisterDiseaseFieldsValidation();
                 break;
         }
-
     }
 
 

@@ -212,6 +212,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
+
                 <ProgressBar
                     android:id="@+id/disease_progress"
                     style="?android:attr/progressBarStyleLarge"
