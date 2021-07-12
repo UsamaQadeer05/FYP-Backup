@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -16,8 +17,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.usama.fyp_phr_android.AES.AES;
-import com.usama.fyp_phr_android.Allergy.AllergyActivity;
-import com.usama.fyp_phr_android.Allergy.Model.AllAllergy;
+import com.usama.fyp_phr_android.Allergy.Model.ProfileAdapter;
 import com.usama.fyp_phr_android.R;
 import com.usama.fyp_phr_android.User.Model.User;
 
@@ -48,6 +48,7 @@ public class ProfileFragment extends Fragment {
     SharedPreferences sh;
     RecyclerView recyclerView;
     int id;
+    View view;
 
 
     public ProfileFragment() {
@@ -85,17 +86,24 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         initView();
         getSharedPreferences();
         getUserProfile();
+
+
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     //  Initializing Objects
     private void initView() {
-        recyclerView = getView().findViewById(R.id.rvProfile);
+        recyclerView = view.findViewById(R.id.rvProfile);
         aes = new AES();
     }
 
@@ -121,27 +129,32 @@ public class ProfileFragment extends Fragment {
     private void getUserProfile() {
         userArrayList = new ArrayList<>();
 
-        AndroidNetworking.get("http://10.0.2.2/PHP_FYP_API/api/Allergies/Allergies")
+        AndroidNetworking.get("http://10.0.2.2/PHP_FYP_API/api/Users/GetUser/{id}")
+                .addPathParameter("id", "" + id)
                 .addQueryParameter("limit", "3")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
                 .getAsObjectList(User.class, new ParsedRequestListener<List<User>>() {
                     @Override
-                    public void onResponse(List<User> userList) {
+                    public void onResponse(List<User> users) {
                         // do anything with response
-                        for (User user : userList) {
+//                        Log.d(TAG, "userList size : " + users.size());
+                        Toast.makeText(view.getContext(), "Gender: " + users.get(0).getU_gender(), Toast.LENGTH_SHORT).show();
+                        for (User user : users) {
                             userArrayList.add(user);
                         }
+                        ProfileAdapter adapter = new ProfileAdapter(userArrayList);
+                        recyclerView.setAdapter(adapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
                     }
 
                     @Override
                     public void onError(ANError anError) {
                         // handle error
-                        Toast.makeText(getContext(), "Some Went Wrong: " +
-                                anError.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Error: " + anError.getMessage(), Toast.LENGTH_SHORT).show();
+
                     }
                 });
     }
-
 }

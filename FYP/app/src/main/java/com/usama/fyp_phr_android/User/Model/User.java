@@ -3,7 +3,6 @@ package com.usama.fyp_phr_android.User.Model;
 public class User {
     int u_id;
     String u_name;
-    String u_cnic;
     String u_gender;
     String u_dob;
     String u_country;
@@ -15,6 +14,8 @@ public class User {
     String u_home;
     String u_food;
     String u_ventilation;
+    String u_cnic;
+
 
     public User() {
     }

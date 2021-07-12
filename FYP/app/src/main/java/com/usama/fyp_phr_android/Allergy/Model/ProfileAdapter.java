@@ -17,11 +17,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 
-public class AllergyAdapter extends RecyclerView.Adapter<AllergyAdapter.ViewHolder> {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder> {
 
     ArrayList<User> userArrayList;
 
-    public AllergyAdapter(ArrayList<User> userArrayList) {
+    public ProfileAdapter(ArrayList<User> userArrayList) {
         this.userArrayList = userArrayList;
     }
 
@@ -55,7 +55,7 @@ public class AllergyAdapter extends RecyclerView.Adapter<AllergyAdapter.ViewHold
         TextView tvFood = holder.tvFood;
         TextView tvVentilation = holder.tvVentilation;
 
-        tvProfileId.setText(user.getU_id());
+        tvProfileId.setText(""+user.getU_id());
         tvProfileName.setText(user.getU_name());
         tvProfileGender.setText(user.getU_gender());
         tvProfileDOB.setText(user.getU_dob());
