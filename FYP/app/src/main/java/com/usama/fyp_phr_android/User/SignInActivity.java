@@ -19,6 +19,7 @@ import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.usama.fyp_phr_android.AES.AES;
+import com.usama.fyp_phr_android.Allergy.AllergyActivity;
 import com.usama.fyp_phr_android.Disease.DiseaseActivity;
 import com.usama.fyp_phr_android.Disease.Model.Disease;
 import com.usama.fyp_phr_android.R;
@@ -168,7 +169,7 @@ public class SignInActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, VaccinationActivity.class));
+                            startActivity(new Intent(SignInActivity.this, AllergyActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);
