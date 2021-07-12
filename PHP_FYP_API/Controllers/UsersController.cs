@@ -57,6 +57,27 @@ namespace PHP_FYP_API.Controllers
         }
 
 
+        //  API for User to Get User       ->  C
+        [HttpGet]
+        public HttpResponseMessage GetUser(int u_id)
+        {
+            try
+            {
+                var loginusers = db.tb_Users.FirstOrDefault(u => u.u_id == u_id);
+                if (loginusers != null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, loginusers);
+                }
+                else
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "null");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
         //  API for User to Register    ->  C
         [HttpPost]
         public HttpResponseMessage RegisterUser(tb_Users user)
