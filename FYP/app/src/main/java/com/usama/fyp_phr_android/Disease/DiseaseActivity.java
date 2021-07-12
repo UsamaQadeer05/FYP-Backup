@@ -83,7 +83,7 @@ public class DiseaseActivity extends AppCompatActivity {
         //  Getting Login User Id
         getSharedPreferences();
 
-        //  For Getting Selected Country
+        //  For Getting Selected Disease
         act_Diseases.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -157,7 +157,6 @@ public class DiseaseActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
-
 
     }
 

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Vaccination.VaccinationActivity"></activity>
+        <activity android:name=".Summary.SummaryActivity" />
+        <activity android:name=".Vaccination.VaccinationActivity" />
         <activity android:name=".VitalSign.VitalSignsActivity" />
         <activity android:name=".Symptom.SymptomActivity" />
         <activity android:name=".SocialHistory.SocialHistoryActivity" />

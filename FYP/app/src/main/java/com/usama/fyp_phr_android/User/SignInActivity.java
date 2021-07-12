@@ -22,7 +22,12 @@ import com.usama.fyp_phr_android.AES.AES;
 import com.usama.fyp_phr_android.Allergy.AllergyActivity;
 import com.usama.fyp_phr_android.Disease.DiseaseActivity;
 import com.usama.fyp_phr_android.Disease.Model.Disease;
+import com.usama.fyp_phr_android.Medication.MedicationActivity;
 import com.usama.fyp_phr_android.R;
+import com.usama.fyp_phr_android.SocialHistory.Model.SocialHistory;
+import com.usama.fyp_phr_android.SocialHistory.SocialHistoryActivity;
+import com.usama.fyp_phr_android.Summary.SummaryActivity;
+import com.usama.fyp_phr_android.Symptom.SymptomActivity;
 import com.usama.fyp_phr_android.User.Model.User;
 import com.usama.fyp_phr_android.Vaccination.VaccinationActivity;
 import com.usama.fyp_phr_android.VitalSign.VitalSignsActivity;
@@ -169,7 +174,7 @@ public class SignInActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, AllergyActivity.class));
+                            startActivity(new Intent(SignInActivity.this, SummaryActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Summary.SummaryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <!--    Profile Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Profile"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/profileFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--    Profile Fragment    -->
+
+
+        <!--    Disease Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Disease"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/diseaseFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Disease Fragment    -->
+
+
+        <!--    Allergies Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Allergies"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/allergyFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Allergies Fragment    -->
+
+
+        <!--    Medications Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Medications"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/medicationFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Medications Fragment    -->
+
+
+        <!--    Family Member Fragment    -->
+        <!--
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="Family Member"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:id="@+id/familyFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        -->
+        <!--    Family Member Fragment    -->
+
+
+        <!--    Social History Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Social History"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/socialFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Social History Fragment    -->
+
+
+        <!--    Symptom Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Symptom"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/symptomFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Symptom Fragment    -->
+
+
+        <!--    Vital Signs Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Vital Signs"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/vitalsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Vital Signs Fragment    -->
+
+
+        <!--    Immunization Fragment    -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="Immunization"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/vaccinationFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--    Immunization Fragment    -->
+
+    </LinearLayout>
+</ScrollView>
