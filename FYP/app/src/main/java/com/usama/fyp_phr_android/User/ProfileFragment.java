@@ -17,7 +17,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.usama.fyp_phr_android.AES.AES;
-import com.usama.fyp_phr_android.Allergy.Model.ProfileAdapter;
+import com.usama.fyp_phr_android.User.Model.ProfileAdapter;
 import com.usama.fyp_phr_android.R;
 import com.usama.fyp_phr_android.User.Model.User;
 
@@ -144,6 +144,8 @@ public class ProfileFragment extends Fragment {
                         for (User user : users) {
                             userArrayList.add(user);
                         }
+                        String name = aes.decryption(userArrayList.get(0).getU_name());
+                        userArrayList.get(0).setU_name(name);
                         ProfileAdapter adapter = new ProfileAdapter(userArrayList);
                         recyclerView.setAdapter(adapter);
                         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));

@@ -1,0 +1,20 @@
+select D_name, Area, sum(MineralRular), sum(FilteredRular), sum(PlainRular), sum(HomeRular), sum(FastRular),
+ sum(ResturantRular), sum(MineralArban), sum(FilteredArban), sum(PlainArban), sum(HomeArban), sum(FastArban), sum(ResturantArban)  from (
+
+select disease.D_name,users.Area ,
+count(CASE WHEN users.water="Mineral Water" and users.Area='Rural' then users.water END) "MineralRular",
+count(CASE WHEN users.water="Filtered Water" and users.Area='Rural' then users.water END) "FilteredRular",
+count(CASE WHEN users.water="Plain Water" and users.Area='Rural' then users.water END) "PlainRular",
+count(CASE WHEN users.food="Home Cooked" and users.Area='Rural' then users.food END) "HomeRular" ,
+count(CASE WHEN users.food="Fast Food"  and users.Area='Rural' then users.food END) "FastRular" ,
+count(CASE WHEN users.food="Resturant Food"  and users.Area='Rural' then users.food END) "ResturantRular",
+
+count(CASE WHEN users.water="Mineral Water" and users.Area='Arban' then users.water END) "MineralArban",
+count(CASE WHEN users.water="Filtered Water" and users.Area='Arban' then users.water END) "FilteredArban",
+count(CASE WHEN users.water="Plain Water" and users.Area='Arban' then users.water END) "PlainArban",
+count(CASE WHEN users.food="Home Cooked" and users.Area='Arban' then users.food END) "HomeArban" ,
+count(CASE WHEN users.food="Fast Food"  and users.Area='Arban' then users.food END) "FastArban" ,
+count(CASE WHEN users.food="Resturant Food"  and users.Area='Arban' then users.food END) "ResturantArban"
+from users join user_disease on user_disease.U_id=users.U_id join disease on disease.D_Id=user_disease.D_Id GROUP BY disease.D_name,users.water,users.food  ) as ABC
+Group by D_name, area
+ ORDER BY `abc`.`D_name`

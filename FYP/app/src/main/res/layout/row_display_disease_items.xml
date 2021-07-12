@@ -7,12 +7,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvProfileId"
+            android:id="@+id/tvDiseaseId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
@@ -20,7 +20,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileName"
+            android:id="@+id/tvDiseaseName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
@@ -28,83 +28,43 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileGender"
+            android:id="@+id/tvDiseaseLevel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="Gender:"
+            android:text="Level:"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileDOB"
+            android:id="@+id/tvDiseaseStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="DOB:"
+            android:text="Status:"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileCountry"
+            android:id="@+id/tvDiseaseStartDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="Country:"
+            android:text="Start Date:"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileProvince"
+            android:id="@+id/tvDiseaseEndDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="Province:"
+            android:text="End Date:"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvProfileCity"
+            android:id="@+id/tvDiseaseLastUpdated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="City:"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tvWaterFac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="Water:"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tvArea"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="Area:"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tvHome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="Home:"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tvFood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="Food:"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tvVentilation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="Ventilation:"
+            android:text="Last Updated:"
             android:textSize="18sp" />
 
     </LinearLayout>

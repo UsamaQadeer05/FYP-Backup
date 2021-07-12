@@ -1,4 +1,4 @@
-package com.usama.fyp_phr_android.Allergy.Model;
+package com.usama.fyp_phr_android.User.Model;
 
 
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.usama.fyp_phr_android.R;
-import com.usama.fyp_phr_android.User.Model.User;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -55,18 +54,18 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         TextView tvFood = holder.tvFood;
         TextView tvVentilation = holder.tvVentilation;
 
-        tvProfileId.setText(""+user.getU_id());
-        tvProfileName.setText(user.getU_name());
-        tvProfileGender.setText(user.getU_gender());
-        tvProfileDOB.setText(user.getU_dob());
-        tvProfileCountry.setText(user.getU_country());
-        tvProfileProvince.setText(user.getU_province());
-        tvProfileCity.setText(user.getU_city());
-        tvWaterFac.setText(user.getU_waterfac());
-        tvArea.setText(user.getU_area());
-        tvHome.setText(user.getU_home());
-        tvFood.setText(user.getU_food());
-        tvVentilation.setText(user.getU_ventilation());
+        tvProfileId.setText("ID: " + user.getU_id());
+        tvProfileName.setText("Name: " + user.getU_name());
+        tvProfileGender.setText("Gender: " + user.getU_gender());
+        tvProfileDOB.setText("DOB: " + user.getU_dob());
+        tvProfileCountry.setText("Country: " + user.getU_country());
+        tvProfileProvince.setText("Province: " + user.getU_province());
+        tvProfileCity.setText("City: " + user.getU_city());
+        tvWaterFac.setText("Water: " + user.getU_waterfac());
+        tvArea.setText("Area: " + user.getU_area());
+        tvHome.setText("Home: " + user.getU_home());
+        tvFood.setText("Food: " + user.getU_food());
+        tvVentilation.setText("Ventilation: " + user.getU_ventilation());
 
     }
 
