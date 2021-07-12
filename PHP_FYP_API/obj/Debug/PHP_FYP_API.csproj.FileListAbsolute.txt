@@ -171,7 +171,6 @@ D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\System.Web.WebPages.Deployment.xml
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\System.Web.WebPages.Razor.xml
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\Antlr3.Runtime.pdb
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.AssemblyReference.cache
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.CoreCompileInputs.cache
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.CopyComplete
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.dll
