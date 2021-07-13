@@ -58,6 +58,7 @@ public class AllergyActivity extends AppCompatActivity {
         final int year = calendar.get(calendar.YEAR);
         final int month = calendar.get(calendar.MONTH);
         final int day = calendar.get(calendar.DAY_OF_MONTH);
+        Toast.makeText(this, "AA Created", Toast.LENGTH_SHORT).show();
 
         //  Function to Get All Allergy
         getAllAllergy();
@@ -122,6 +123,25 @@ public class AllergyActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "AA Started", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, "AA Restarted", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "AA Resume", Toast.LENGTH_SHORT).show();
+    }
+
 
     //  Initializing Objects
     private void initView() {
@@ -150,7 +170,7 @@ public class AllergyActivity extends AppCompatActivity {
         // the very first time when the app is opened, there is nothing to show
         id = sh.getInt("User Id", 0);
 
-        Toast.makeText(this, "Id: " + id, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Id: " + id, Toast.LENGTH_SHORT).show();
 
         // We can then use the data
 //        name.setText(s1);
