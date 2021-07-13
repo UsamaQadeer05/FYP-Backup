@@ -50,8 +50,12 @@ public class DiseaseAdapter extends RecyclerView.Adapter<DiseaseAdapter.ViewHold
         TextView tvDiseaseEndDate = holder.tvDiseaseEndDate;
         TextView tvDiseaseLastUpdated = holder.tvDiseaseLastUpdated;
 
-        String dname = allDiseaseArrayList.get(disease.getD_id() - 1).getD_name();
-
+//        String dname = allDiseaseArrayList.get(disease.getD_id() - 1).getD_name();
+        String dname = "";
+        for (int i = 0; i < allDiseaseArrayList.size(); i++) {
+            if (disease.getD_id() == allDiseaseArrayList.get(i).getD_id())
+                dname = allDiseaseArrayList.get(i).getD_name();
+        }
         tvDiseaseId.setText("ID: " + disease.getUd_id());
         tvDiseaseName.setText("Name: " + dname);
         tvDiseaseLevel.setText("Level: " + disease.getUd_level());

@@ -172,6 +172,22 @@
                     android:textStyle="bold" />
 
 
+                <!--  FOR VIEW BUTTON  -->
+                <Button
+                    android:id="@+id/btnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/round_border"
+                    android:onClick="onClick"
+                    android:text="View"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
                 <ProgressBar
                     android:id="@+id/allergy_progress"
                     style="?android:attr/progressBarStyleLarge"

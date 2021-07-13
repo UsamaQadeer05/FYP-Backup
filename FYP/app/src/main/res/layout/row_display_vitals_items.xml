@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvVitalId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Id:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalTemperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Temperature:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalPulseRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Pulse Rate:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalRespirationRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Respiratory Rate:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalBloodPressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Blood Pressure:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Weight:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Height:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVitalLastUpdated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Last Updated:"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvVacId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Id:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVacName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Vaccination:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVacCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Company:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVacDosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Dosage:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVacInjectedDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Injected Date:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvVacLastUpdated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Last Updated:"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

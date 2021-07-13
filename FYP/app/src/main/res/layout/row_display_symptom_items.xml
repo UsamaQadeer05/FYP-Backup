@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSymptomId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Id:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSymptomDiseaseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Disease:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSymptomName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Symptom:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSymptomStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Start Date:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSymptomEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="End Date:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSymptomLastUpdated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Last Updated:"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

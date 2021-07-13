@@ -43,7 +43,7 @@ public class AllergyActivity extends AppCompatActivity {
     ArrayList<String> arrayList_Allergy, arrayList_Level;
     ArrayAdapter<String> arrayAdapter_Allergy, arrayAdapter_Level;
     EditText etStartDate, etLastUpdated;
-    Button btnAdd;
+    Button btnAdd, btnView;
     ProgressBar pg;
     int id, allergy_name_pos;
 
@@ -135,6 +135,7 @@ public class AllergyActivity extends AppCompatActivity {
         etLastUpdated = findViewById(R.id.etLastUpdated);
 
         btnAdd = findViewById(R.id.btnAdd);
+        btnView = findViewById(R.id.btnView);
         pg = findViewById(R.id.allergy_progress);
     }
 
@@ -185,9 +186,14 @@ public class AllergyActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
 
-            //  Btn Add Diseases
+            //  Btn Add Allergies
             case R.id.btnAdd:
                 RegisterAllergyFieldsValidation();
+                break;
+
+            //  Btn View Allergies
+            case R.id.btnView:
+                startActivity(new Intent(AllergyActivity.this, AllergyDisplayActivity.class));
                 break;
         }
     }
@@ -275,7 +281,7 @@ public class AllergyActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(AllergyActivity.this, "Added User Disease Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(AllergyActivity.this, AllergyActivity.class));
+//                            startActivity(new Intent(AllergyActivity.this, AllergyActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

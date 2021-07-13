@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSocialHistoryId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Id:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSocialHistoryDiseaseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Disease:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSocialHistoryLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Level:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSocialHistoryRelation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Relation:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvSocialHistoryLastUpdated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Last Updated:"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

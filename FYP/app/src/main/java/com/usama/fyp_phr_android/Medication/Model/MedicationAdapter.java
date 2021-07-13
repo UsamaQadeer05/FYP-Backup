@@ -66,7 +66,7 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Vi
 
         for (int i = 0; i < allMedicationArrayList.size(); i++) {
             if (medication.getD_id() == allMedicationArrayList.get(i).getM_id()) {
-                dname = allMedicationArrayList.get(i).getM_name();
+                mname = allMedicationArrayList.get(i).getM_name();
                 cname = allMedicationArrayList.get(i).getM_company();
             }
         }
