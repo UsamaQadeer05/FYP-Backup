@@ -49,7 +49,7 @@ public class AllergyAdapter extends RecyclerView.Adapter<AllergyAdapter.ViewHold
         TextView tvAllergyLastUpdated = holder.tvAllergyLastUpdated;
 
         String dname = "";
-        for (int i = 0; i < allergyArrayList.size(); i++) {
+        for (int i = 0; i < allAllergies.size(); i++) {
             if (allergy.getA_id() == allAllergies.get(i).getA_id())
                 dname = allAllergies.get(i).getA_name();
         }

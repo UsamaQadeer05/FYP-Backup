@@ -121,7 +121,7 @@ public class VitalsFragment extends Fragment {
     }
 
 
-    //  API Call to get User Symptom through AFNL
+    //  API Call to get User Vital Signs through AFNL
     private void getUserVitals() {
         vitalsArrayList = new ArrayList<>();
 

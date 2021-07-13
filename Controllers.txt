@@ -463,3 +463,69 @@ namespace FYP_PHR_API.Controllers
 
     }
 }
+
+
+
+
+***	Block User	***
+public function login(Request $req) 
+    {
+         session_start();
+         $c=md5($req->cnic);$p=md5($req->password);
+         if(!isset($_SESSION["attempts"]) && !isset($_SESSION['ids'])){$_SESSION ["attempts"]=0;$_SESSION['ids']=$c;}
+        
+     $users=DB::select('select * from users where cnic=? and password=?',[$c,$p]);
+     if($users)
+     {
+          $_SESSION['upass']=$p;
+         foreach($users as $user)
+         { 
+             if($user->user_Status=="Blocked")
+             {
+                 echo "<script>alert('Your Account is Blocked Contact to System Administrator')</script>";
+                 echo "<script>window.location.href='/';</script>";
+             }
+             if($user->type == "Researcher")
+             {
+                 // $_SESSION["activeuid"]=$user->U_id;
+                 $_SESSION["rid"]=$user->U_id;
+                 $_SESSION["name"]=$user->Name;
+                 $_SESSION["relation"]="Res";
+                 $_SESSION["img"]=$user->Profile_Pic;
+                 return view('resdashboard');
+             }
+             if($user->type == 'Patient')
+             {
+                 $_SESSION["logintime"]=time();
+                 $_SESSION["activeuid"]=$user->U_id;
+                 $_SESSION["name"]=$user->Name;
+                 $_SESSION["uid"]=$user->U_id;
+                 $_SESSION["cnic"]=$user->cnic;
+                 $_SESSION["img"]=$user->Profile_Pic;
+                 $relations=DB::select('SELECT * FROM `user_relation` ur INNER JOIN users u on u.U_id=ur.member_id WHERE ur.U_id=? order by u.Name asc, ur.relation DESC',[$_SESSION['activeuid']]);
+                 return view('loginboard',['users' => $relations, 'singleuser' => $users ]);
+             }
+            
+         }
+  
+        }
+        else{
+            if($_SESSION["attempts"]<2 && $_SESSION["ids"]==$c){
+            $_SESSION["attempts"]+=1;
+            $_SESSION["ids"]=$c;
+            echo "<script>alert('Invalid Username and Password')</script>";
+            echo "<script>window.location.href='/';</script>";
+            echo $_SESSION["attempts"];
+            }
+            // echo $_SESSION["attempts"];
+           else{
+               
+            echo "<script>alert('Blocked')</script>";
+            unset($_SESSION["attempts"]);
+            DB::update('update users set user_Status="Blocked" where cnic=?',[$_SESSION["ids"]]);
+            unset($_SESSION["ids"]);
+            echo "<script>window.location.href='/';</script>";}
+        }
+      
+    
+    }

@@ -340,7 +340,7 @@ public class DiseaseActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(DiseaseActivity.this, "Added User Disease Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(DiseaseActivity.this, DiseaseActivity.class));
+//                            startActivity(new Intent(DiseaseActivity.this, DiseaseActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

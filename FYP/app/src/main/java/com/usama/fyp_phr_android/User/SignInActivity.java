@@ -22,10 +22,12 @@ import com.usama.fyp_phr_android.AES.AES;
 import com.usama.fyp_phr_android.Allergy.AllergyActivity;
 import com.usama.fyp_phr_android.Allergy.AllergyDisplayActivity;
 import com.usama.fyp_phr_android.Allergy.Model.Allergy;
+import com.usama.fyp_phr_android.DashboardActivity;
 import com.usama.fyp_phr_android.Disease.DiseaseActivity;
 import com.usama.fyp_phr_android.Disease.Model.Disease;
 import com.usama.fyp_phr_android.Medication.MedicationActivity;
 import com.usama.fyp_phr_android.R;
+import com.usama.fyp_phr_android.Researcher.ResearcherActivity;
 import com.usama.fyp_phr_android.SocialHistory.Model.SocialHistory;
 import com.usama.fyp_phr_android.SocialHistory.SocialHistoryActivity;
 import com.usama.fyp_phr_android.Summary.SummaryActivity;
@@ -51,6 +53,7 @@ public class SignInActivity extends AppCompatActivity {
     SharedPreferences sh;
     ProgressBar pg;
     int id;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,7 @@ public class SignInActivity extends AppCompatActivity {
 
         // Storing the key and its value as the data fetched from edittext
         myEdit.putInt("User Id", id);
+        myEdit.putString("User Name", name);
 
         // Once the changes have been made,
         // we need to commit to apply those changes made,
@@ -174,9 +178,11 @@ public class SignInActivity extends AppCompatActivity {
                         // do anything with response
                         try {
                             id = response.getInt("u_id");
+                            name = response.getString("u_name");
+                            name = aes.decryption(name);
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, AllergyActivity.class));
+                            startActivity(new Intent(SignInActivity.this, ResearcherActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);
