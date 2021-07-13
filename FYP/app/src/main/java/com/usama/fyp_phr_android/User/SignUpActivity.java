@@ -361,7 +361,9 @@ public class SignUpActivity extends AppCompatActivity {
     private void setFoodDropdown() {
         arrayList_Food = new ArrayList<>();
         arrayList_Food.add("Home");
-        arrayList_Food.add("Outside");
+        arrayList_Food.add("Mixed");
+        arrayList_Food.add("Fast");
+        arrayList_Food.add("Restaurant");
 
         arrayAdapter_Food = new ArrayAdapter<>(getApplicationContext(),
                 R.layout.support_simple_spinner_dropdown_item, arrayList_Food);
