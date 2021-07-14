@@ -182,7 +182,7 @@ public class SignInActivity extends AppCompatActivity {
                             name = aes.decryption(name);
                             Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, ResearcherActivity.class));
+                            startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

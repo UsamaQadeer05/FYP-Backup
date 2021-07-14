@@ -16,6 +16,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.usama.fyp_phr_android.Allergy.AllergyActivity;
 import com.usama.fyp_phr_android.Disease.DiseaseActivity;
+import com.usama.fyp_phr_android.FamilyMember.FamilyMemberActivity;
 import com.usama.fyp_phr_android.Medication.MedicationActivity;
 import com.usama.fyp_phr_android.SocialHistory.Model.SocialHistory;
 import com.usama.fyp_phr_android.SocialHistory.SocialHistoryActivity;
@@ -91,7 +92,7 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(DashboardActivity.this, MedicationActivity.class));
                 break;
             case R.id.dash_familymember:
-                startActivity(new Intent(DashboardActivity.this, DashboardActivity.class));
+                startActivity(new Intent(DashboardActivity.this, FamilyMemberActivity.class));
                 break;
             case R.id.dash_socialhistory:
                 startActivity(new Intent(DashboardActivity.this, SocialHistoryActivity.class));
