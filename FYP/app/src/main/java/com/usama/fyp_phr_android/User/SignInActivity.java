@@ -27,6 +27,8 @@ import com.usama.fyp_phr_android.Disease.DiseaseActivity;
 import com.usama.fyp_phr_android.Disease.Model.Disease;
 import com.usama.fyp_phr_android.Medication.MedicationActivity;
 import com.usama.fyp_phr_android.R;
+import com.usama.fyp_phr_android.Researcher.AnalysisActivity;
+import com.usama.fyp_phr_android.Researcher.PieChartActivity;
 import com.usama.fyp_phr_android.Researcher.ResearcherActivity;
 import com.usama.fyp_phr_android.SocialHistory.Model.SocialHistory;
 import com.usama.fyp_phr_android.SocialHistory.SocialHistoryActivity;
@@ -52,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
     AES aes = new AES();
     SharedPreferences sh;
     ProgressBar pg;
-    int id;
+    int id, times = 0;
     String name;
 
     @Override
@@ -154,7 +156,7 @@ public class SignInActivity extends AppCompatActivity {
         //  CNIC: 61101-1234561-1   ->    A1D8BEDAAF9B0B63D322128D8034B0A1
         //  PIN: 8787   ->    109EAB8B10E5436EF98AB623041CE3CE
 
-
+//        startActivity(new Intent(SignInActivity.this, ResearcherActivity.class));
         LoginUser();
     }
 
@@ -166,6 +168,7 @@ public class SignInActivity extends AppCompatActivity {
         User user = new User();
         user.setU_password(enPIN);
         user.setU_cnic(enCNIC);
+
 
         AndroidNetworking.post("http://10.0.2.2/PHP_FYP_API/api/Users/LoginUser")
                 .addBodyParameter(user) // posting java object
@@ -179,10 +182,14 @@ public class SignInActivity extends AppCompatActivity {
                         try {
                             id = response.getInt("u_id");
                             name = response.getString("u_name");
-                            name = aes.decryption(name);
-                            Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
-                            pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
+                            String type = response.getString("type");
+                            if (type.equals("Patient")) {
+                                name = aes.decryption(name);
+                                Toast.makeText(SignInActivity.this, "Login Successfully: " + id, Toast.LENGTH_SHORT).show();
+                                pg.setVisibility(View.INVISIBLE);
+                                startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
+                            } else
+                                startActivity(new Intent(SignInActivity.this, PieChartActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);
@@ -192,6 +199,7 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onError(ANError error) {
                         // handle error
+                        pg.setVisibility(View.INVISIBLE);
                         Toast.makeText(SignInActivity.this, "Some went wrong: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

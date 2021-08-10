@@ -353,7 +353,7 @@ public class MedicationActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(MedicationActivity.this, "Added User Medication Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(MedicationActivity.this, MedicationActivity.class));
+//                            startActivity(new Intent(MedicationActivity.this, MedicationActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

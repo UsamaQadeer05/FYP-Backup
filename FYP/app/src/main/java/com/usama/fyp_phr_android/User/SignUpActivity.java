@@ -507,6 +507,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.setU_area(inputArea.getEditText().getText().toString());
         user.setU_food(inputFood.getEditText().getText().toString());
         user.setU_ventilation(inputVentilation.getEditText().getText().toString());
+        user.setType("Patient");
 
 
         AndroidNetworking.post("http://10.0.2.2/PHP_FYP_API/api/Users/RegisterUser")

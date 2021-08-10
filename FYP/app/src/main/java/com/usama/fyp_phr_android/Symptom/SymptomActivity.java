@@ -328,7 +328,7 @@ public class SymptomActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(SymptomActivity.this, "Added User Symptom Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SymptomActivity.this, SymptomActivity.class));
+//                            startActivity(new Intent(SymptomActivity.this, SymptomActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

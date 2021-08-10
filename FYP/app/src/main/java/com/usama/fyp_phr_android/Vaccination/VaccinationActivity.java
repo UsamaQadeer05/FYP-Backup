@@ -248,7 +248,7 @@ public class VaccinationActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(VaccinationActivity.this, "Added User Vaccination Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(VaccinationActivity.this, VaccinationActivity.class));
+//                            startActivity(new Intent(VaccinationActivity.this, VaccinationActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

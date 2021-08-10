@@ -132,6 +132,8 @@
     <Property Name="u_food" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="u_ventilation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="u_cnic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="u_accountstatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tb_Vaccination">
     <Key>
@@ -371,6 +373,17 @@
       <End Role="tb_Diseases" EntitySet="tb_Diseases" />
       <End Role="tb_User_Symptoms" EntitySet="tb_User_Symptoms" />
     </AssociationSet>
+    <FunctionImport Name="CITYPIECHART" ReturnType="Collection(PHP_FYPModel.CITYPIECHART_Result)">
+      <Parameter Name="CITYNAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="COUNTRYPIECHART" ReturnType="Collection(PHP_FYPModel.COUNTRYPIECHART_Result)" />
+    <FunctionImport Name="COUNTRYPIECHARTS" ReturnType="Collection(PHP_FYPModel.COUNTRYPIECHARTS_Result)" />
+    <FunctionImport Name="CITYPIECHARTS" ReturnType="Collection(PHP_FYPModel.CITYPIECHARTS_Result)">
+      <Parameter Name="CITYNAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CITYPIECHARTSS" ReturnType="Collection(PHP_FYPModel.CITYPIECHARTSS_Result)">
+      <Parameter Name="CITYNAME" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <Association Name="FK_tb_User_Medications_tb_Diseases">
     <End Type="PHP_FYPModel.tb_Diseases" Role="tb_Diseases" Multiplicity="0..1" />
@@ -396,4 +409,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="CITYPIECHART_Result">
+    <Property Type="String" Name="d_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DISEASE_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="COUNTRYPIECHART_Result">
+    <Property Type="String" Name="d_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DISEASE_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="COUNTRYPIECHARTS_Result">
+    <Property Type="String" Name="d_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DISEASE_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CITYPIECHARTS_Result">
+    <Property Type="String" Name="d_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DISEASE_COUNT" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CITYPIECHARTSS_Result">
+    <Property Type="String" Name="d_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DISEASE_COUNT" Nullable="true" />
+  </ComplexType>
 </Schema>

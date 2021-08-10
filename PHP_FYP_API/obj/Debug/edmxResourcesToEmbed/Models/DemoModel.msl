@@ -129,6 +129,8 @@
     <EntitySetMapping Name="tb_Users">
       <EntityTypeMapping TypeName="PHP_FYPModel.tb_Users">
         <MappingFragment StoreEntitySet="tb_Users">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="u_accountstatus" ColumnName="u_accountstatus" />
           <ScalarProperty Name="u_cnic" ColumnName="u_cnic" />
           <ScalarProperty Name="u_id" ColumnName="u_id" />
           <ScalarProperty Name="u_name" ColumnName="u_name" />
@@ -155,5 +157,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CITYPIECHART" FunctionName="PHP_FYPModel.Store.CITYPIECHART">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PHP_FYPModel.CITYPIECHART_Result">
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="DISEASE_COUNT" ColumnName="DISEASE COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="COUNTRYPIECHART" FunctionName="PHP_FYPModel.Store.COUNTRYPIECHART">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PHP_FYPModel.COUNTRYPIECHART_Result">
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="DISEASE_COUNT" ColumnName="DISEASE COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="COUNTRYPIECHARTS" FunctionName="PHP_FYPModel.Store.COUNTRYPIECHARTS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PHP_FYPModel.COUNTRYPIECHARTS_Result">
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="DISEASE_COUNT" ColumnName="DISEASE_COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CITYPIECHARTS" FunctionName="PHP_FYPModel.Store.CITYPIECHARTS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PHP_FYPModel.CITYPIECHARTS_Result">
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="DISEASE_COUNT" ColumnName="DISEASE COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CITYPIECHARTSS" FunctionName="PHP_FYPModel.Store.CITYPIECHARTSS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PHP_FYPModel.CITYPIECHARTSS_Result">
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="DISEASE_COUNT" ColumnName="DISEASE_COUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

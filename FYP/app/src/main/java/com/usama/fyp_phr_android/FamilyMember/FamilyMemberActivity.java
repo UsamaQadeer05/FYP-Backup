@@ -295,7 +295,7 @@ public class FamilyMemberActivity extends AppCompatActivity {
     //  onClick Listeners
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnAdd:
+            case R.id.btnRegister:
                 Toast.makeText(this, "Family Member", Toast.LENGTH_SHORT).show();
                 MembersFieldsValidation();
                 break;
@@ -601,9 +601,9 @@ public class FamilyMemberActivity extends AppCompatActivity {
                         " Relation: " + inputRelation.getEditText().getText() +
                         " As Relation: " + inputAsRelation.getEditText().getText()
                 , Toast.LENGTH_SHORT).show();
-
-        //  Function to Register Family Member
 //        RegisterMember();
+        //  Function to Register Family Member
+        RegisterMember();
     }
 
 

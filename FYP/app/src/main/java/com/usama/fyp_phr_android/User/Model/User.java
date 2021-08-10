@@ -15,6 +15,7 @@ public class User {
     String u_food;
     String u_ventilation;
     String u_cnic;
+    String type;
 
 
     public User() {
@@ -35,6 +36,24 @@ public class User {
         this.u_home = u_home;
         this.u_food = u_food;
         this.u_ventilation = u_ventilation;
+    }
+
+    public User(int u_id, String u_name, String u_gender, String u_dob, String u_country, String u_province, String u_city, String u_password, String u_waterfac, String u_area, String u_home, String u_food, String u_ventilation, String u_cnic, String type) {
+        this.u_id = u_id;
+        this.u_name = u_name;
+        this.u_gender = u_gender;
+        this.u_dob = u_dob;
+        this.u_country = u_country;
+        this.u_province = u_province;
+        this.u_city = u_city;
+        this.u_password = u_password;
+        this.u_waterfac = u_waterfac;
+        this.u_area = u_area;
+        this.u_home = u_home;
+        this.u_food = u_food;
+        this.u_ventilation = u_ventilation;
+        this.u_cnic = u_cnic;
+        this.type = type;
     }
 
     public int getU_id() {
@@ -147,5 +166,13 @@ public class User {
 
     public void setU_ventilation(String u_ventilation) {
         this.u_ventilation = u_ventilation;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

@@ -12,6 +12,8 @@ namespace PHP_FYP_API.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class PHP_FYPEntities : DbContext
     {
@@ -38,5 +40,42 @@ namespace PHP_FYP_API.Models
         public virtual DbSet<tb_User_Vitals> tb_User_Vitals { get; set; }
         public virtual DbSet<tb_Users> tb_Users { get; set; }
         public virtual DbSet<tb_Vaccination> tb_Vaccination { get; set; }
+    
+        public virtual ObjectResult<CITYPIECHART_Result> CITYPIECHART(string cITYNAME)
+        {
+            var cITYNAMEParameter = cITYNAME != null ?
+                new ObjectParameter("CITYNAME", cITYNAME) :
+                new ObjectParameter("CITYNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CITYPIECHART_Result>("CITYPIECHART", cITYNAMEParameter);
+        }
+    
+        public virtual ObjectResult<COUNTRYPIECHART_Result> COUNTRYPIECHART()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<COUNTRYPIECHART_Result>("COUNTRYPIECHART");
+        }
+    
+        public virtual ObjectResult<COUNTRYPIECHARTS_Result> COUNTRYPIECHARTS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<COUNTRYPIECHARTS_Result>("COUNTRYPIECHARTS");
+        }
+    
+        public virtual ObjectResult<CITYPIECHARTS_Result> CITYPIECHARTS(string cITYNAME)
+        {
+            var cITYNAMEParameter = cITYNAME != null ?
+                new ObjectParameter("CITYNAME", cITYNAME) :
+                new ObjectParameter("CITYNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CITYPIECHARTS_Result>("CITYPIECHARTS", cITYNAMEParameter);
+        }
+    
+        public virtual ObjectResult<CITYPIECHARTSS_Result> CITYPIECHARTSS(string cITYNAME)
+        {
+            var cITYNAMEParameter = cITYNAME != null ?
+                new ObjectParameter("CITYNAME", cITYNAME) :
+                new ObjectParameter("CITYNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CITYPIECHARTSS_Result>("CITYPIECHARTSS", cITYNAMEParameter);
+        }
     }
 }

@@ -27,7 +27,9 @@ namespace PHP_FYP_API.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK, loginusers);
                 }
                 else
+                {
                     return Request.CreateResponse(HttpStatusCode.NotFound, "null");
+                }
             }
             catch (Exception ex)
             {

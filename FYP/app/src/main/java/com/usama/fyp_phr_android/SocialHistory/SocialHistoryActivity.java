@@ -281,8 +281,8 @@ public class SocialHistoryActivity extends AppCompatActivity {
                             Toast.makeText(SocialHistoryActivity.this,
                                     "Added User Social History Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(SocialHistoryActivity.this,
-                                    SocialHistoryActivity.class));
+//                            startActivity(new Intent(SocialHistoryActivity.this,
+//                                    SocialHistoryActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

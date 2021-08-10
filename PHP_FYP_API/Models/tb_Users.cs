@@ -28,5 +28,7 @@ namespace PHP_FYP_API.Models
         public string u_food { get; set; }
         public string u_ventilation { get; set; }
         public string u_cnic { get; set; }
+        public string u_accountstatus { get; set; }
+        public string type { get; set; }
     }
 }

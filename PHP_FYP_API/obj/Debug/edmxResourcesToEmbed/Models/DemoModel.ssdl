@@ -132,6 +132,8 @@
     <Property Name="u_home" Type="nvarchar" MaxLength="100" />
     <Property Name="u_food" Type="nvarchar" MaxLength="100" />
     <Property Name="u_ventilation" Type="nvarchar" MaxLength="100" />
+    <Property Name="u_accountstatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="type" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_Vaccination">
     <Key>
@@ -321,6 +323,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="CITYPIECHART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CITYPIECHARTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CITYPIECHARTSS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="COUNTRYPIECHART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="COUNTRYPIECHARTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="PHP_FYPModelStoreContainer">
     <EntitySet Name="tb_Allergies" EntityType="Self.tb_Allergies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Diseases" EntityType="Self.tb_Diseases" Schema="dbo" store:Type="Tables" />

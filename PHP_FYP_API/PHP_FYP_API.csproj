@@ -165,6 +165,7 @@
     <Compile Include="Controllers\AllergiesController.cs" />
     <Compile Include="Controllers\DiseasesController.cs" />
     <Compile Include="Controllers\MedicationsController.cs" />
+    <Compile Include="Controllers\ResearcherController.cs" />
     <Compile Include="Controllers\SocialHistoryController.cs" />
     <Compile Include="Controllers\SymptomsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -172,6 +173,21 @@
     <Compile Include="Controllers\VitalSignsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CITYPIECHARTSS_Result.cs">
+      <DependentUpon>DemoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CITYPIECHARTS_Result.cs">
+      <DependentUpon>DemoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CITYPIECHART_Result.cs">
+      <DependentUpon>DemoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COUNTRYPIECHARTS_Result.cs">
+      <DependentUpon>DemoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COUNTRYPIECHART_Result.cs">
+      <DependentUpon>DemoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DemoModel.Context.cs">
       <AutoGen>True</AutoGen>

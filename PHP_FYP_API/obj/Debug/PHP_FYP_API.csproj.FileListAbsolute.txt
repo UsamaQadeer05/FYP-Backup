@@ -88,7 +88,7 @@ D:\Usama Qadeer\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.CopyComplete
 D:\Usama Qadeer\PHP_FYP_API\obj\Debug\PHP_FYP_API.dll
 D:\Usama Qadeer\PHP_FYP_API\obj\Debug\PHP_FYP_API.pdb
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\PHP_FYP_API.dll.config
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\PHP_FYP_API.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\PHP_FYP_API.pdb
@@ -104,7 +104,7 @@ D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.Managed.Core.targets
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -175,3 +175,4 @@ D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.CoreCompileI
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.CopyComplete
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.dll
 D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.pdb
+D:\Usama Qadeer\FYP-Backup\PHP_FYP_API\obj\Debug\PHP_FYP_API.csproj.AssemblyReference.cache

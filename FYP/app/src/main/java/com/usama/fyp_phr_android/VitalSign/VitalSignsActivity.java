@@ -191,7 +191,7 @@ public class VitalSignsActivity extends AppCompatActivity {
                             id = response.getInt("u_id");
                             Toast.makeText(VitalSignsActivity.this, "Added User Vitals Successfully: ", Toast.LENGTH_SHORT).show();
                             pg.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(VitalSignsActivity.this, VitalSignsActivity.class));
+//                            startActivity(new Intent(VitalSignsActivity.this, VitalSignsActivity.class));
                         } catch (JSONException e) {
                             e.printStackTrace();
                             pg.setVisibility(View.INVISIBLE);

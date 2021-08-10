@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FamilyMember.FamilyMemberActivity"></activity>
+        <activity android:name=".Researcher.AnalysisActivity"></activity>
+        <activity android:name=".FamilyMember.FamilyMemberActivity" />
         <activity android:name=".Researcher.LineChartActivity" />
         <activity android:name=".Researcher.PieChartActivity" />
         <activity android:name=".Researcher.BarChartActivity" />
